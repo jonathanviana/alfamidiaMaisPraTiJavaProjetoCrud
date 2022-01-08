@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.alfamidia.maisprati.java.projetocrud.UserRepositoryTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 5.233 s <<< FAILURE! - in com.alfamidia.maisprati.java.projetocrud.UserRepositoryTests
+testGet  Time elapsed: 0.245 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting Optional to contain a value but it was empty.
+	at com.alfamidia.maisprati.java.projetocrud.UserRepositoryTests.testGet(UserRepositoryTests.java:64)
+
+testAddNew  Time elapsed: 0.476 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [userdb.UK_ruuc5pudtb9pgt47271m9y1s8]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.alfamidia.maisprati.java.projetocrud.UserRepositoryTests.testAddNew(UserRepositoryTests.java:30)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.alfamidia.maisprati.java.projetocrud.UserRepositoryTests.testAddNew(UserRepositoryTests.java:30)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'testOne@gmail.com' for key 'userdb.UK_ruuc5pudtb9pgt47271m9y1s8'
+	at com.alfamidia.maisprati.java.projetocrud.UserRepositoryTests.testAddNew(UserRepositoryTests.java:30)
+
+testDelete  Time elapsed: 0.016 s  <<< ERROR!
+org.springframework.dao.EmptyResultDataAccessException: No class com.alfamidia.maisprati.java.projetocrud.user.User entity with id 2 exists!
+	at com.alfamidia.maisprati.java.projetocrud.UserRepositoryTests.testDelete(UserRepositoryTests.java:71)
+
